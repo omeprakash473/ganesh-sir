@@ -239,7 +239,11 @@
 (() => {
   const dock = document.getElementById('socialDock');
   if (!dock) return;
-  document.addEventListener('pointerdown', event => { if (!dock.contains(event.target)) dock.open = false; });
-  document.addEventListener('keydown', event => { if (event.key === 'Escape' && dock.open) { dock.open = false; dock.querySelector('summary').focus(); } });
-  dock.querySelectorAll('a[href]').forEach(link => link.addEventListener('click', () => { dock.open = false; }));
+  const desktop = window.matchMedia('(min-width: 992px)');
+  const syncDock = () => { dock.open = desktop.matches; };
+  syncDock();
+  desktop.addEventListener('change', syncDock);
+  document.addEventListener('pointerdown', event => { if (!desktop.matches && !dock.contains(event.target)) dock.open = false; });
+  document.addEventListener('keydown', event => { if (!desktop.matches && event.key === 'Escape' && dock.open) { dock.open = false; dock.querySelector('summary').focus(); } });
+  dock.querySelectorAll('a[href]').forEach(link => link.addEventListener('click', () => { if (!desktop.matches) dock.open = false; }));
 })();
