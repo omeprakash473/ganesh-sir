@@ -1,0 +1,33 @@
+/* Progressive motion: page content stays visible without JavaScript. */
+@media (prefers-reduced-motion: no-preference){
+  .hero-copy{animation:gentle-entrance .85s cubic-bezier(.22,1,.36,1) both}
+  .learning-art{animation:gentle-entrance 1.1s .12s cubic-bezier(.22,1,.36,1) both}
+  .hero .highlight:after{transform-origin:left center;animation:draw-highlight .85s .35s cubic-bezier(.22,1,.36,1) both}
+  .sticker-top{animation:note-drift 8s 1.2s ease-in-out 2}
+  .sticker-bottom{animation:card-drift 9s 1.5s ease-in-out 2}
+  .site-header{transition:box-shadow .3s ease,background .3s ease}
+  .nav-link{position:relative;width:fit-content}
+  .nav-link:after{content:'';position:absolute;left:0;right:0;bottom:1px;height:1px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-link:hover:after,.nav-link:focus-visible:after{transform:scaleX(1)}
+  .btn{transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
+  .btn:hover{box-shadow:0 6px 16px #153e3518}
+  .btn span,.course-link span,.text-link span,.round-arrow{display:inline-block;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+  .btn:hover span,.course-link:hover span,.text-link:hover span{transform:translate(3px,-3px)}
+  .quiet-link:hover .round-arrow{transform:translate(2px,-2px)}
+  .mode-card,.faculty-photo{transition:box-shadow .35s ease,border-color .35s ease}
+  .mode-card:hover{box-shadow:0 12px 28px #153e350c;border-color:#b0bfa3}
+  .faculty-photo img{transition:transform .65s cubic-bezier(.22,1,.36,1)}
+  .faculty-card:hover .faculty-photo img{transform:scale(1.025)}
+  .filter-button{transition:background .2s ease,color .2s ease,border-color .2s ease}
+  .enquiry-result:not([hidden]){animation:gentle-entrance .4s ease-out both}
+  .faculty-biography[open] .faculty-biography-content,.faq-list details[open]>p{animation:detail-entrance .3s ease-out both}
+  @keyframes gentle-entrance{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes detail-entrance{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes draw-highlight{from{transform:rotate(-1.5deg) scaleX(0)}to{transform:rotate(-1.5deg) scaleX(1)}}
+  @keyframes note-drift{0%,100%{transform:rotate(7deg) translateY(0)}50%{transform:rotate(5deg) translateY(-5px)}}
+  @keyframes card-drift{0%,100%{transform:rotate(3deg) translateY(0)}50%{transform:rotate(2deg) translateY(-4px)}}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
