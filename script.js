@@ -198,10 +198,14 @@
   });
   const number = String(config.whatsapp || '').replace(/[^0-9]/g, '');
   if (/^[1-9][0-9]{7,14}$/.test(number)) {
-    const link = document.getElementById('social-whatsapp');
-    link.href = 'https://wa.me/' + number; link.target = '_blank'; link.rel = 'noopener noreferrer';
-    link.setAttribute('aria-label', 'Chat with Ganesh Classes on WhatsApp (opens in a new tab)');
-    link.querySelector('.social-tooltip').textContent = 'Chat on WhatsApp';
+    ['social-whatsapp', 'floating-whatsapp'].forEach(id => {
+      const link = document.getElementById(id);
+      if (!link) return;
+      link.href = 'https://wa.me/' + number; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', 'Chat with Ganesh Classes on WhatsApp (opens in a new tab)');
+      const tooltip = link.querySelector('.social-tooltip');
+      if (tooltip) tooltip.textContent = 'Chat on WhatsApp';
+    });
   }
 })();
 

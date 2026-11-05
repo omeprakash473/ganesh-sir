@@ -79,20 +79,6 @@
 .admission-steps p{font-size:12px;line-height:1.9;color:var(--muted);margin:0;max-width:330px}
 @media(max-width:767px){.physics-example{grid-template-columns:1fr;gap:10px;padding:25px}.physics-formula{padding:10px}.physics-formula>span{font-size:45px}.admission-steps{grid-template-columns:1fr;gap:25px}.admission-steps p{max-width:none}.approach-item{padding:0 0 20px}.approach-step{margin-bottom:12px}}
 
-/* Fixed middle-left social rail, with reserved space so it never covers content. */
-body{padding-left:74px}
-.social-rail{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:110;display:flex;flex-direction:column;gap:10px;padding:15px 8px 10px;background:#fffefa;border:1px solid #dfE4d8;border-radius:40px;box-shadow:0 8px 28px #153e3514}
-.rail-heading{font-size:6px;letter-spacing:.1em;font-weight:800;color:#697c65;text-align:center;margin-bottom:1px}
-.social-icon{position:relative;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#f1f4eb;text-decoration:none;cursor:pointer;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
-.social-whatsapp{color:#16834e;background:#e9f6ed}.social-instagram{color:#b93b79;background:#f9ecf2}.social-youtube{color:#cd3333;background:#fff0ed}.social-facebook{color:#3266ad;background:#edf2fb}
-.social-icon:hover,.social-icon:focus-visible{transform:translateY(-2px);box-shadow:0 4px 10px #153e3514;color:inherit}
-.social-whatsapp:hover,.social-whatsapp:focus-visible{color:#16834e}.social-instagram:hover,.social-instagram:focus-visible{color:#b93b79}.social-youtube:hover,.social-youtube:focus-visible{color:#cd3333}.social-facebook:hover,.social-facebook:focus-visible{color:#3266ad}
-.social-icon[aria-disabled="true"]{cursor:default}
-.social-tooltip{pointer-events:none;position:absolute;left:calc(100% + 16px);top:50%;transform:translate(4px,-50%);opacity:0;visibility:hidden;white-space:nowrap;background:var(--green);color:#fff;font-size:10px;line-height:1.5;padding:8px 12px;border-radius:6px;box-shadow:0 5px 15px #153e351a;transition:opacity .2s ease,transform .2s ease,visibility .2s ease}
-.social-tooltip:before{content:'';position:absolute;right:100%;top:50%;transform:translateY(-50%);border:5px solid transparent;border-right-color:var(--green)}
-.social-icon:hover .social-tooltip,.social-icon:focus-visible .social-tooltip{opacity:1;visibility:visible;transform:translate(0,-50%)}
-@media(max-width:575px){body{padding-left:49px}.social-rail{left:4px;padding:11px 4px 7px;gap:8px}.social-icon{width:31px;height:34px}.social-icon svg{width:21px;height:21px}.rail-heading{font-size:5px}.social-tooltip{left:calc(100% + 10px);font-size:9px}}
-
 /* Vector sparkle avoids inconsistent emoji rendering across browsers. */
 .decorative-sparkle{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-.12em;flex-shrink:0}
 
@@ -136,3 +122,17 @@ body:has(.enquiry-confirmation[open]){overflow:hidden}
 .enquiry-confirmation .whatsapp-send-note{font-size:10px;margin:18px 0 0;color:var(--muted)}
 .enquiry-confirmation .result-actions{margin-top:18px}
 @media(max-width:575px){.enquiry-confirmation .result-actions{flex-direction:column}.enquiry-confirmation .result-actions .btn{width:100%}}
+
+/* Social links stay in the footer; no gutter or fixed rail narrows the page. */
+.footer-social{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:0 0 27px}
+.footer-social-label{font-size:11px;color:#c4cbbb;margin-right:8px}
+.social-icon{position:relative;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;text-decoration:none;cursor:pointer;transition:transform .2s ease}
+.social-whatsapp{color:#16834e;background:#e9f6ed}.social-instagram{color:#b93b79;background:#f9ecf2}.social-youtube{color:#cd3333;background:#fff0ed}.social-facebook{color:#3266ad;background:#edf2fb}
+.social-icon:hover,.social-icon:focus-visible{transform:translateY(-2px)}
+.social-icon[aria-disabled="true"]{cursor:default}
+.social-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fffdf6;color:var(--green);border-radius:5px;padding:7px 10px;font-size:10px;line-height:1.5;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none}
+.social-icon:hover .social-tooltip,.social-icon:focus-visible .social-tooltip{opacity:1;visibility:visible}
+.floating-whatsapp{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:90;width:52px;height:52px;display:grid;place-items:center;background:#16834e;color:#fff;border:2px solid #fff;border-radius:50%;box-shadow:0 5px 18px #102e4730;transition:transform .2s ease,background .2s ease;text-decoration:none}
+.floating-whatsapp svg{width:28px;height:28px}
+.floating-whatsapp:hover,.floating-whatsapp:focus-visible{color:#fff;background:#116c40;transform:translateY(-2px)}
+@media(max-width:575px){.floating-whatsapp{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));width:48px;height:48px}.footer-social{gap:10px}.footer-social-label{width:100%;margin:0}.site-footer{padding-bottom:76px}}
