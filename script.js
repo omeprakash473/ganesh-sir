@@ -234,3 +234,12 @@
     });
   });
 })();
+
+// The social panel is opt-in and closes when visitors return to the page.
+(() => {
+  const dock = document.getElementById('socialDock');
+  if (!dock) return;
+  document.addEventListener('pointerdown', event => { if (!dock.contains(event.target)) dock.open = false; });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && dock.open) { dock.open = false; dock.querySelector('summary').focus(); } });
+  dock.querySelectorAll('a[href]').forEach(link => link.addEventListener('click', () => { dock.open = false; }));
+})();
