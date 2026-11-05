@@ -148,3 +148,59 @@ body:has(.enquiry-confirmation[open]){overflow:hidden}
   .social-dock-links{position:static;transform:none;padding:5px;gap:8px;margin-left:4px}
   .social-dock .social-icon{width:36px;height:36px}
 }
+
+/* Readable content typography across desktop and mobile. */
+body{font-size:16px}
+.announcement{font-size:12px;line-height:1.7}
+.nav-link{font-size:14px}
+.btn{font-size:14px}
+.eyebrow,.section-heading .eyebrow,.featured-review-note .eyebrow,.physics-example .eyebrow,.programme-dialog-header .eyebrow{font-size:12px;line-height:1.7;letter-spacing:.08em}
+.hero-description{font-size:17px}
+.quiet-link,.text-link,.course-link{font-size:14px}
+.hero-bottom p{font-size:13px}
+.section-heading>p,.section-copy{font-size:15px;line-height:1.85}
+.filter-button{font-size:13px;padding:10px 16px}
+.programme-card>p,.mode-content p,.approach-item p,.admission-steps p,.featured-review-note>p:not(.eyebrow){font-size:15px;line-height:1.85}
+.course-level{font-size:12px!important;line-height:1.7}
+.course-subjects,.section-note{font-size:13px;line-height:1.8}
+.faculty-info>span{font-size:12px;line-height:1.7}
+.faculty-info p,.faculty-info .faculty-summary,.faculty-info .faculty-biography-content p{font-size:14px;line-height:1.85}
+.faculty-credentials span{font-size:12px;padding:6px 9px}
+.faculty-biography summary{font-size:14px;line-height:1.8;padding:5px 0}
+.faculty-info .faculty-philosophy p{font-size:14px}
+.faculty-philosophy cite{font-size:13px}
+.teaching-photo figcaption,.offline-class-photo figcaption{font-size:13px}
+.online-class-heading,.online-class-heading span:last-child{font-size:12px}
+.review-caption p,.review-side-note p,.review-viewing-guide p{font-size:14px;line-height:1.85}
+.review-meta{font-size:12px;line-height:1.7;letter-spacing:.03em}
+.faq-list summary{font-size:16px;line-height:1.7}
+.faq-list details p{font-size:15px;line-height:1.85}
+.physics-example p:not(.eyebrow){font-size:14px;line-height:1.85}
+.approach-step{font-size:12px;line-height:1.7}
+.admission-copy>p:not(.eyebrow){font-size:15px;line-height:1.85}
+.contact-block strong{font-size:15px}
+.contact-block p{font-size:14px;line-height:1.8}
+.form-intro{font-size:14px}
+.enquiry-form label,.enquiry-form legend{font-size:14px;line-height:1.6}
+.form-control,.form-select{font-size:16px;line-height:1.5}
+.field-help,.form-disclosure{font-size:13px;line-height:1.75}
+.mode-options label{font-size:13px;padding:10px 12px}
+.enquiry-result p,.enquiry-confirmation .whatsapp-send-note{font-size:13px;line-height:1.8}
+.enquiry-confirmation #enquiryPreview{font-size:15px;line-height:1.8}
+.programme-dialog-body p,.programme-dialog-body li{font-size:15px;line-height:1.85}
+.programme-dialog-body .programme-availability{font-size:13px;line-height:1.8}
+.site-footer .footer-top>p,.back-top{font-size:14px;line-height:1.8}
+.footer-bottom{font-size:14px;line-height:1.8;color:#d8e0d3;flex-wrap:wrap;row-gap:14px}
+.footer-bottom>div{flex-wrap:wrap;column-gap:22px;row-gap:5px}
+.footer-bottom a{display:inline-flex;align-items:center;min-height:44px;padding:5px 0}
+.social-tooltip{font-size:12px}
+@media(max-width:575px){
+ .announcement{font-size:11px}
+ .hero-description{font-size:16px}
+ .hero-actions .btn,.quiet-link{font-size:13px}
+ .section-heading>p{font-size:15px}
+ .footer-top>p{font-size:14px}
+ .footer-bottom{font-size:14px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+ .footer-bottom>div{gap:20px}
+ .programme-dialog-body .btn{font-size:14px}
+}
